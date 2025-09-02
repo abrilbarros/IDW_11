@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nombre de Clinica - Contacto</title>
+</head>
+
+
+<body>
+    <!-- Este seria el header con los botones de navegacion, no se si iria el de contacto -->
+    <header>
+        <h1>Nuestra clinica</h1>
+        <nav>
+            <a href="https://www.nuestraclinica.com/inicio">INICIO</a> |
+            <a href="https://www.nuestraclinica.com/institucional">INSTITUCIONAL</a> |
+            <a href="https://www.nuestraclinica.com/contacto">CONTACTO</a>
+        </nav>
+        <hr>
+    </header>
+    
+
+    <!-- Formulario de contacto -->
+    <!-- placeholder muestra las letras grices de los recuerdos, en caso de sacar el nombre al boton-->
+    <main>   
+        <section>
+        <h2>Contacto</h2>
+            <!--Action seria la direccion en donde se almacena, y post en method es por si son mas 255 carac-->        
+            <form action="/mensajesdecontacto" method="POST">
+                <!--el for es para que al hacer click sobre la palabra te lleve al cuadro de texto-->
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingrese sú Nombre"><br><br>
+            
+                <label for="correo">Correo electrónico</label>
+                <input type="email" id="correo" name="correo" placeholder="Ingrese sú E-mail"><br><br>
+            
+                <label for="mensaje">Mensaje</label><br>
+                <textarea id="mensaje" name="mensaje" rows="8" cols="50" placeholder="Ingrese el Mensaje"></textarea><br><br>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+        <hr>
+    <!-- Información de contacto -->
+        <section>
+        <h3>Información de Contacto</h3>
+            <p>📞 +549 345 154 000 000</p>
+            <p>📍 Calle Cualquiera 1234, Argentina. Entre Rios, Concordia</p>
+        </section>
+        <hr>       
+    <!-- Imagen de la ubicacion o link a google maps -->
+        <section>
+        <h3>Nuestra Ubicación</h3>
+            <img src="https://" width="" height="">
+        </section>
+        <hr>
+    </main> 
+
+    <footer>
+        <p>© 2025 Nuestra Clinica</p>
+    </footer>
+</body>
+</html>
