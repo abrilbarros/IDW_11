@@ -1,104 +1,134 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IDW S.A. | Inicio</title>
-</head>
 
-<body>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Css importado -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
     <!--HEADER-->
     <header>
+      <div class="title">
         <a href="index.html">
-            <img src="https://placehold.co/100x100" alt="IDW S.A.">
+          <img
+            src="https://plus.unsplash.com/premium_photo-1723478527060-db98550c1c07?q=80&w=1702&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="IDW S.A."
+          />
         </a>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="institucional.html">Institucional</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
+        <h1>Clinica Medica IDW</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="institucional.html">Institucional</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <!--HERO / PORTADA-->
-        <section>
-            <h1>Tu salud a un clic de distancia</h1>
-            <p>Reservá tus turnos médicos de forma rápida y sencilla</p>
-            <a href="#">Reservar turno</a>
-        </section>
+      <!--HERO / PORTADA-->
+      <section class="hero">
+        <h2>Tu salud a un clic de distancia</h2>
+        <p>Reservá tus turnos médicos de forma rápida y sencilla</p>
+        <a href="#" class="btn-principal">Reservar turno</a>
+      </section>
 
-        <!--MÉDICOS / ESPECIALIDADES-->
-        <section>
-            <h2>Nuestros profesionales</h2>
+      <!--MÉDICOS / ESPECIALIDADES-->
+      <section>
+        <h2>Nuestros profesionales</h2>
+        <div class="profesionales-container">
+          <article class="card-profesional">
+            <img
+              src="https://images.unsplash.com/photo-1673865641073-4479f93a7776?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Valentina Ríos Fernández"
+            />
+            <h3>Dra. Valentina Ríos Fernández</h3>
+            <p>Clínica Médica</p>
+            <a href="#" class="btn-secundario">Ver más</a>
+          </article>
 
-            <article>
-                <img src="https://placehold.co/130x150" alt="Valentina Ríos Fernández">
-                <h3>Dra. Valentina Ríos Fernández</h3>
-                <p>Clínica Médica</p>
-                <a href="#">Ver más</a>
-            </article>
+          <article class="card-profesional">
+            <img
+              src="https://images.unsplash.com/photo-1659353885824-1199aeeebfc6?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Mateo López Fernández"
+            />
+            <h3>Dr. Mateo López Fernández</h3>
+            <p>Pediatría</p>
+            <a href="#" class="btn-secundario">Ver más</a>
+          </article>
 
-            <article>
-                <img src="https://placehold.co/130x150" alt="Mateo López Fernández">
-                <h3>Dr. Mateo López Fernández</h3>
-                <p>Pediatría</p>
-                <a href="#">Ver más</a>
-            </article>
+          <article class="card-profesional">
+            <img
+              src="https://plus.unsplash.com/premium_photo-1702598498862-5449e30bb5fa?q=80&w=776&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Camila Duarte Herrera"
+            />
+            <h3>Dra. Camila Duarte Herrera</h3>
+            <p>Cirugía General</p>
+            <a href="#" class="btn-secundario">Ver más</a>
+          </article>
+        </div>
+      </section>
 
-            <article>
-                <img src="https://placehold.co/130x150" alt="Camila Duarte Herrera">
-                <h3>Dra. Camila Duarte Herrera</h3>
-                <p>Cirugía General</p>
-                <a href="#">Ver más</a>
-            </article>
-        </section>
+      <!--SERVICIOS-->
+      <section class="servicios">
+        <h2>Servicios</h2>
+        <ul>
+          <li>Laboratorio</li>
+          <li>Ecografías</li>
+          <li>Resonancias</li>
+          <li>Radiografías</li>
+          <li>Medicina laboral</li>
+          <li>Enfermería</li>
+          <li>Prevencion</li>
+          <li>Cirugías ambulatorias</li>
+        </ul>
+      </section>
 
-        <!--SERVICIOS-->
-        <section>
-            <h2>Servicios</h2>
-            <ul>
-                <li>Laboratorio</li>
-                <li>Ecografías</li>
-                <li>Resonancias</li>
-                <li>Radiografías</li>
-                <li>Medicina laboral</li>
-                <li>Enfermería</li>
-                <li>Diagnóstico, tratamiento y prevención</li>
-                <li>Cirugías ambulatorias</li>
-            </ul>
-        </section>
-
-        <!--PILARES-->
-        <section>
-            <h2>¿Por qué elegir IDW S.A.?</h2>
-            <ul>
-                <li>
-                    <h3>Atención 100% centrada en el paciente</h3>
-                    <p>Comunicación clara y seguimiento integral</p>
-                </li>
-                <li>
-                    <h3>Equipo con trayectoria</h3>
-                    <p>Especialistas con vasta experiencia, enfoque humano y compromiso</p>
-                </li>
-                <li>
-                    <h3>Formación continua e interdisciplina</h3>
-                    <p>Capacitación permanente y trabajo en equipo entre las distintas áreas</p>
-                </li>
-                <li>
-                    <h3>Tecnología y calidez</h3>
-                    <p>Equipos de última generación y ambiente empático</p>
-                </li>
-            </ul>
-        </section>
+      <!--PILARES-->
+      <section class="pilares">
+        <h2>¿Por qué elegir IDW S.A.?</h2>
+        <ul>
+          <li>
+            <h3>Atención 100% centrada en el paciente</h3>
+            <p>Comunicación clara y seguimiento integral</p>
+          </li>
+          <li>
+            <h3>Equipo con trayectoria</h3>
+            <p>
+              Especialistas con vasta experiencia, enfoque humano y compromiso
+            </p>
+          </li>
+          <li>
+            <h3>Formación continua e interdisciplina</h3>
+            <p>
+              Capacitación permanente y trabajo en equipo entre las distintas
+              áreas
+            </p>
+          </li>
+          <li>
+            <h3>Tecnología y calidez</h3>
+            <p>Equipos de última generación y ambiente empático</p>
+          </li>
+        </ul>
+      </section>
     </main>
 
     <!--FOOTER-->
     <footer>
-        <p>© 2025 IDW S.A. - Proyecto académico (primera entrega).</p>
+      <p>© 2025 IDW S.A. - Proyecto académico (primera entrega).</p>
     </footer>
-</body>
-
+  </body>
 </html>
