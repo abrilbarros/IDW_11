@@ -132,7 +132,7 @@ h2 {
 }
 
 .card-profesional:hover {
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgb(73, 201, 188);
 }
 
 .card-profesional img {
@@ -178,6 +178,7 @@ h2 {
     padding: 40px;
     border-radius: 15px;
     margin: 20px 0;
+
 }
 
 .servicios ul {
@@ -240,6 +241,10 @@ h2 {
 .pilares p {
     color: #666;
     line-height: 1.5;
+}
+
+.pilares li:hover {
+    box-shadow: 0 5px 15px rgb(73, 201, 188);
 }
 
 /* footer */
