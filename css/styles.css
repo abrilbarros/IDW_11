@@ -255,3 +255,31 @@ footer {
     padding: 1.7rem 1.2rem;
     margin-top: 3rem;
 }
+
+/* redes */ 
+.footer-redes { 
+    list-style: none; 
+    padding: 0; 
+    margin: 0.8rem 0 0; 
+    display: flex; 
+    gap: 0.8rem; 
+    justify-content: center; 
+} 
+
+.footer-redes a { 
+    color: inherit; 
+    text-decoration: none; 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 0.4rem; 
+} 
+
+.footer-redes a:hover { 
+    text-decoration: underline; 
+} 
+
+.footer-redes img { 
+    width: 18px; 
+    height: 18px; 
+    display: block; 
+}
