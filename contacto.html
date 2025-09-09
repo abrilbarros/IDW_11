@@ -7,8 +7,7 @@
   </head>
 
   <body>
-    <!-- Este seria el header con los botones de navegacion, no se si iria el de contacto -->
-    <!--HEADER-->
+      <!--HEADER-->
     <header>
       <div class="title">
         <a href="index.html">
@@ -17,7 +16,7 @@
             alt="IDW S.A."
           />
         </a>
-        <h1>Clinica Medica Vita</h1>
+        <h1>Clínica Vita</h1>
       </div>
       <nav>
         <ul>
@@ -35,7 +34,7 @@
         <h2>Contacto</h2>
         <!--Action seria la direccion en donde se almacena, y post en method es por si son mas 255 carac-->
         <form action="/mensajesdecontacto" method="POST">
-          <!--el for es para que al hacer click sobre la palabra te lleve al cuadro de texto-->
+          <!--El for es para que al hacer click sobre la palabra te lleve al cuadro de texto-->
           <label for="nombre">Nombre</label>
           <input
             type="text"
@@ -71,19 +70,40 @@
       <!-- Información de contacto -->
       <section class="info-contacto">
         <h3>Información de Contacto</h3>
-        <p>📞 +549 345 154 000 000</p>
-        <p>📍 Calle Cualquiera 1234, Argentina. Entre Rios, Concordia</p>
+          <address>
+            <p>📞 <a href="tel:+5493454362778">+54 9 345 436 2778</a></p>
+            <p>✉️ <a href="info@nuestraclinica.com">info@nuestraclinica.com</a></p>
+            <p>📍 Calle Cualquiera 1234, Concordia, Entre Ríos, Argentina</p>
+          </address>
       </section>
 
       <!-- Imagen de la ubicacion o link a google maps -->
       <section class="ubicacion">
         <h3>Nuestra Ubicación</h3>
-        <img src="https://" width="" height="" />
+        <img src="#"/>
       </section>
     </main>
 
     <footer>
-      <p>© 2025 IDW S.A. - Proyecto académico (primera entrega).</p>
+         <p>© 2025 IDW S.A. - Proyecto académico (primera entrega).</p>
+      <ul class="footer-redes"> 
+        <li> 
+          <a href="#" target="_blank" rel="noopener"> 
+            <img src="https://www.google.com/s2/favicons?sz=32&domain=facebook.com" alt="Facebook"> Facebook 
+          </a> 
+        </li> 
+        <li> 
+          <a href="#" target="_blank" rel="noopener"> 
+            <img src="https://www.google.com/s2/favicons?sz=32&domain=instagram.com" alt="Instagram"> Instagram 
+          </a> 
+        </li> 
+        <li> 
+          <a href="#" target="_blank" rel="noopener"> 
+            <img src="https://www.google.com/s2/favicons?sz=32&domain=linkedin.com" alt="LinkedIn"> LinkedIn 
+          </a> 
+        </li> 
+      </ul>
     </footer>
   </body>
 </html>
+
