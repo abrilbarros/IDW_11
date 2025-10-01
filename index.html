@@ -1,151 +1,290 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clínica Vita | Inicio</title>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clínica Vita | Inicio</title>
 
-    <!-- Css importado -->
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
+  <!-- BOOTSTRAP CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
 
-  <body>
-    <!--HEADER-->
-    <header>
-      <div class="title">
-        <a href="index.html">
-          <img
-            src="https://plus.unsplash.com/premium_photo-1723478527060-db98550c1c07?q=80&w=1702&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Clínica Vita"
-          />
-        </a>
-        <h1>Clínica Vita</h1>
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet" />
+
+  <!-- estilos del proyecto -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body data-page="index">
+  <!-- ======================== NAV ======================== -->
+  <nav class="navbar navbar-light bg-light navbar-expand-lg sticky-top">
+    <div class="container-fluid">
+      <!-- marca -->
+      <a class="navbar-brand d-inline-flex align-items-center gap-2 m-0" href="index.html">
+        <img src="img/logo.png" alt="Clínica Vita" class="logo-marca" />
+        <span class="d-none d-lg-inline fw-semibold text-primary">Clínica Vita</span>
+      </a>
+
+      <!-- título centrado en mobile -->
+      <h1 class="position-absolute top-50 start-50 translate-middle d-lg-none fs-5 m-0 fw-bold text-primary">
+        Clínica Vita
+      </h1>
+
+      <!-- botón hamburguesa -->
+      <button class="navbar-toggler ms-auto d-lg-none" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#menuVita">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- menú en desktop -->
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto d-none d-lg-flex align-items-lg-center gap-lg-3">
+          <li class="nav-item">
+            <a class="nav-link active fw-semibold text-success" href="index.html">Index</a>
+          </li>
+          <li class="nav-item"><a class="nav-link text-primary" href="institucional.html">Institucional</a>
+          </li>
+          <li class="nav-item"><a class="nav-link text-primary" href="contacto.html">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link text-primary" href="faq.html">FAQ</a></li>
+        </ul>
       </div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="institucional.html">Institucional</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </nav>
-    </header>
+    </div>
+  </nav>
 
-    <main>
-      <!--HERO / PORTADA-->
-      <section class="hero">
-        <h2>Tu salud a un clic de distancia</h2>
-        <p>Reservá tus turnos médicos de forma rápida y sencilla</p>
-        <a href="contacto.html" class="btn-principal">Reservar turno</a>
-      </section>
-
-      <!--MÉDICOS / ESPECIALIDADES-->
-      <section>
-        <h2>Nuestros profesionales</h2>
-        <div class="profesionales-container">
-          <article class="card-profesional">
-            <img
-              src="https://images.unsplash.com/photo-1673865641073-4479f93a7776?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Valentina Ríos Fernández"
-            />
-            <h3>Dra. Valentina Ríos Fernández</h3>
-            <p>Clínica Médica</p>
-            <a href="#" class="btn-secundario">Ver más</a>
-          </article>
-
-          <article class="card-profesional">
-            <img
-              src="https://images.unsplash.com/photo-1659353885824-1199aeeebfc6?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Mateo López Fernández"
-            />
-            <h3>Dr. Mateo López Fernández</h3>
-            <p>Pediatría</p>
-            <a href="#" class="btn-secundario">Ver más</a>
-          </article>
-
-          <article class="card-profesional">
-            <img
-              src="https://plus.unsplash.com/premium_photo-1702598498862-5449e30bb5fa?q=80&w=776&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Camila Duarte Herrera"
-            />
-            <h3>Dra. Camila Duarte Herrera</h3>
-            <p>Cirugía General</p>
-            <a href="#" class="btn-secundario">Ver más</a>
-          </article>
-        </div>
-      </section>
-
-      <!--SERVICIOS-->
-      <section class="servicios">
-        <h2>Servicios</h2>
-        <ul>
-          <li>Laboratorio</li>
-          <li>Ecografías</li>
-          <li>Resonancias</li>
-          <li>Radiografías</li>
-          <li>Medicina laboral</li>
-          <li>Enfermería</li>
-          <li>Prevención</li>
-          <li>Cirugías ambulatorias</li>
-        </ul>
-      </section>
-
-      <!--PILARES-->
-      <section class="pilares">
-        <h2>¿Por qué elegir Clínica Vita?</h2>
-        <ul>
-          <li>
-            <h3>Atención 100% centrada en el paciente</h3>
-            <p>Comunicación clara y seguimiento integral</p>
-          </li>
-          <li>
-            <h3>Equipo con trayectoria</h3>
-            <p>
-              Especialistas con vasta experiencia, enfoque humano y compromiso
-            </p>
-          </li>
-          <li>
-            <h3>Formación continua e interdisciplina</h3>
-            <p>
-              Capacitación permanente y trabajo en equipo entre las distintas
-              áreas
-            </p>
-          </li>
-          <li>
-            <h3>Tecnología y calidez</h3>
-            <p>Equipos de última generación y ambiente empático</p>
-          </li>
-        </ul>
-      </section>
-    </main>
-
-    <!--FOOTER-->
-    <footer>
-      <p>© 2025 IDW S.A. - Proyecto académico (primera entrega).</p>
-      <ul class="footer-redes"> 
-        <li> 
-          <a href="#" target="_blank" rel="noopener"> 
-            <img src="https://www.google.com/s2/favicons?sz=32&domain=facebook.com" alt="Facebook"> Facebook 
-          </a> 
-        </li> 
-        <li> 
-          <a href="#" target="_blank" rel="noopener"> 
-            <img src="https://www.google.com/s2/favicons?sz=32&domain=instagram.com" alt="Instagram"> Instagram 
-          </a> 
-        </li> 
-        <li> 
-          <a href="#" target="_blank" rel="noopener"> 
-            <img src="https://www.google.com/s2/favicons?sz=32&domain=linkedin.com" alt="LinkedIn"> LinkedIn 
-          </a> 
-        </li> 
+  <!-- ======================== OFFCANVAS (mobile/tablet) ======================== -->
+  <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="menuVita" data-bs-scroll="true">
+    <div class="offcanvas-header border-bottom">
+      <h2 class="offcanvas-title fs-6 fw-bold m-0">Menú</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active fw-semibold text-success" href="index.html">Index</a>
+        </li>
+        <li class="nav-item"><a class="nav-link text-primary" href="institucional.html">Institucional</a></li>
+        <li class="nav-item"><a class="nav-link text-primary" href="contacto.html">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link text-primary" href="faq.html">FAQ</a></li>
       </ul>
-    </footer>
-  </body>
+    </div>
+  </div>
+
+  <main role="main">
+    <!-- ======================== HERO / CARRUSEL ======================== -->
+    <section class="position-relative">
+      <div id="carruselVita" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000"
+        data-bs-pause="false">
+        <!-- indicadores -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carruselVita" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#carruselVita" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#carruselVita" data-bs-slide-to="2"></button>
+        </div>
+
+        <!-- slides -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/hero1.png" class="d-block w-100" alt="Profesionales de la salud 1" />
+          </div>
+          <div class="carousel-item">
+            <img src="img/hero2.png" class="d-block w-100" alt="Profesionales de la salud 2" />
+          </div>
+          <div class="carousel-item">
+            <img src="img/hero3.png" class="d-block w-100" alt="Profesionales de la salud 3" />
+          </div>
+        </div>
+
+        <!-- controles -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carruselVita" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carruselVita" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+
+      <!-- panel de texto fijo -->
+      <div class="position-absolute bottom-0 start-0 end-0 px-3 px-md-4 pb-4 superposicion-hero">
+        <div class="bg-white bg-opacity-75 rounded-3 d-grid text-center mx-auto p-3 p-md-4 panel-hero">
+          <h2 class="fw-bolder text-primary fs-5 fs-md-3 mb-2">Tu salud a un clic de distancia</h2>
+          <p class="fw-semibold text-primary mb-3">Reservá tus turnos médicos de forma rápida y sencilla</p>
+          <!-- CTA actualizado: lleva a contacto -->
+          <a href="contacto.html" class="btn btn-success fw-semibold">Reservar turno</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================== EQUIPO ======================== -->
+    <section class="py-4 py-md-5" id="equipo">
+      <div class="container">
+        <h2 class="text-center fw-bolder text-primary fs-3 mb-3 mb-md-4">Nuestros profesionales</h2>
+
+        <div class="row g-3 g-md-4">
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="card h-100 shadow-sm rounded-4">
+              <img src="img/valentinariosfernandez.png" class="card-img-top" alt="Dra. Valentina Ríos Fernández"
+                loading="lazy" />
+              <div class="card-body text-center">
+                <h3 class="h6 fw-bold text-primary mb-1">Dra. Valentina Ríos Fernández</h3>
+                <p class="mb-0 text-secondary fw-semibold">Clínica Médica</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="card h-100 shadow-sm rounded-4">
+              <img src="img/mateolopezfernandez.png" class="card-img-top" alt="Dr. Mateo López Fernández"
+                loading="lazy" />
+              <div class="card-body text-center">
+                <h3 class="h6 fw-bold text-primary mb-1">Dr. Mateo López Fernández</h3>
+                <p class="mb-0 text-secondary fw-semibold">Pediatría</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="card h-100 shadow-sm rounded-4">
+              <img src="img/camiladuarteherrera.png" class="card-img-top" alt="Dra. Camila Duarte Herrera"
+                loading="lazy" />
+              <div class="card-body text-center">
+                <h3 class="h6 fw-bold text-primary mb-1">Dra. Camila Duarte Herrera</h3>
+                <p class="mb-0 text-secondary fw-semibold">Cirugía General</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="card h-100 shadow-sm rounded-4">
+              <img src="img/mariajosebarrera.png" class="card-img-top" alt="Dra. María José Barrera" loading="lazy" />
+              <div class="card-body text-center">
+                <h3 class="h6 fw-bold text-primary mb-1">Dra. María José Barrera</h3>
+                <p class="mb-0 text-secondary fw-semibold">Pediatría</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="text-center mt-3 mt-md-4">
+          <a href="#" class="btn btn-success btn-sm fw-semibold">Ver más</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================== SERVICIOS ======================== -->
+    <section class="py-4 py-md-5" id="servicios">
+      <div class="container">
+        <div class="border border-success rounded-4 p-3 p-md-4 bg-white">
+          <!-- logo de servicios -->
+          <div class="d-grid justify-content-center mb-3">
+            <img src="img/servicios.png" alt="Logo de servicios" class="rounded-circle logo-servicios" loading="lazy" />
+          </div>
+
+          <h2 class="text-center fw-bolder text-primary fs-4 mb-2">Servicios</h2>
+          <hr class="border border-success opacity-100 mx-auto separador-angosto" />
+
+          <!-- lista -->
+          <ul
+            class="row row-cols-1 row-cols-lg-2 g-2 g-md-3 mx-auto justify-content-center text-center text-lg-start lh-lg list-unstyled ps-0 lista-servicios">
+            <li class="col fw-semibold text-primary">Laboratorio</li>
+            <li class="col fw-semibold text-primary">Ecografías</li>
+            <li class="col fw-semibold text-primary">Resonancias</li>
+            <li class="col fw-semibold text-primary">Radiografías</li>
+            <li class="col fw-semibold text-primary">Medicina laboral</li>
+            <li class="col fw-semibold text-primary">Enfermería</li>
+            <li class="col fw-semibold text-primary">Prevención</li>
+            <li class="col fw-semibold text-primary">Cirugías ambulatorias</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================== ¿POR QUÉ ELEGIRNOS? ======================== -->
+    <section class="py-4 py-md-5" id="por-que">
+      <div class="container">
+        <h2 class="text-center fw-bolder text-primary fs-3 mb-3 mb-md-4">¿Por qué elegir Clínica Vita?</h2>
+
+        <!-- intro -->
+        <div class="mx-auto text-center mb-3 mb-md-4 intro-por-que">
+          <h3 class="fs-6 fs-md-5 fw-bolder text-primary mb-2">Un espacio que combina innovación y cercanía
+          </h3>
+          <p class="text-primary mb-0">Con tecnología actual y un equipo experimentado, brindamos precisión
+            médica con trato humano.</p>
+        </div>
+
+        <!-- razones -->
+        <div class="row g-3 g-md-4">
+          <div class="col-12 col-md-6 col-lg-3">
+            <article
+              class="h-100 rounded-4 bg-success-subtle text-center p-3 shadow-sm d-grid align-content-start gap-2">
+              <h4 class="h6 fw-semibold text-primary m-0">Atención centrada en el paciente</h4>
+              <p class="text-secondary m-0">Comunicación clara y seguimiento integral.</p>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <article class="h-100 rounded-4 bg-light text-center p-3 shadow-sm d-grid align-content-start gap-2">
+              <h4 class="h6 fw-semibold text-primary m-0">Trayectoria y experiencia</h4>
+              <p class="text-secondary m-0">Equipo con amplia experiencia y enfoque humano.</p>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <article
+              class="h-100 rounded-4 bg-success-subtle text-center p-3 shadow-sm d-grid align-content-start gap-2">
+              <h4 class="h6 fw-semibold text-primary m-0">Formación continua e interdisciplina</h4>
+              <p class="text-secondary m-0">Capacitación constante y trabajo colaborativo.</p>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <article class="h-100 rounded-4 bg-light text-center p-3 shadow-sm d-grid align-content-start gap-2">
+              <h4 class="h6 fw-semibold text-primary m-0">Tecnología con calidez</h4>
+              <p class="text-secondary m-0">Equipos modernos en un ambiente cercano.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="bg-primary text-white py-3 text-center">
+    <div class="container">
+      <div class="row gy-3 align-items-center">
+        <div class="col-12">
+          <p class="m-0 fw-bold small">© 2025 IDW S.A. · Proyecto académico (segunda entrega)</p>
+        </div>
+
+        <div class="col-12">
+          <nav class="d-flex align-items-center gap-3 flex-wrap justify-content-center">
+            <a class="text-white fw-bold text-decoration-none d-inline-flex align-items-center gap-2"
+              href="https://www.facebook.com/" target="_blank" rel="noopener">
+              <img src="img/facebook.png" alt="Facebook" class="icono-20" />
+              <span>Facebook</span>
+            </a>
+            <a class="text-white fw-bold text-decoration-none d-inline-flex align-items-center gap-2"
+              href="https://www.instagram.com/" target="_blank" rel="noopener">
+              <img src="img/instagram.png" alt="Instagram" class="icono-20" />
+              <span>Instagram</span>
+            </a>
+            <a class="text-white fw-bold text-decoration-none d-inline-flex align-items-center gap-2"
+              href="https://www.linkedin.com/" target="_blank" rel="noopener">
+              <img src="img/linkedin.png" alt="LinkedIn" class="icono-20" />
+              <span>LinkedIn</span>
+            </a>
+          </nav>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOOTSTRAP JS -->
+  <script src="js/bootstrap.bundle.min.js" defer></script>
+</body>
+
 </html>
