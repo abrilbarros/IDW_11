@@ -1,120 +1,215 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clínica Vita | Contacto</title>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clínica Vita | Contacto</title>
 
-    <!-- Css importado -->
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
+  <!-- BOOTSTRAP CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
 
-  <body>
-      <!--HEADER-->
-    <header>
-      <div class="title">
-        <a href="index.html">
-          <img
-            src="https://plus.unsplash.com/premium_photo-1723478527060-db98550c1c07?q=80&w=1702&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Clínica Vita"
-          />
-        </a>
-        <h1>Clínica Vita</h1>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="institucional.html">Institucional</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet" />
+
+  <!-- estilos del proyecto -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body data-page="contacto">
+  <!-- ======================== NAV ======================== -->
+  <nav class="navbar navbar-light bg-light navbar-expand-lg sticky-top">
+    <div class="container-fluid">
+      <!-- marca -->
+      <a class="navbar-brand d-inline-flex align-items-center gap-2 m-0" href="index.html">
+        <img src="img/logo.png" alt="Clínica Vita" class="logo-marca" />
+        <span class="d-none d-lg-inline fw-semibold text-primary">Clínica Vita</span>
+      </a>
+
+      <!-- título centrado en mobile -->
+      <h1 class="position-absolute top-50 start-50 translate-middle d-lg-none fs-5 m-0 fw-bold text-primary">Clínica
+        Vita</h1>
+
+      <!-- botón hamburguesa -->
+      <button class="navbar-toggler ms-auto d-lg-none" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#menuVita">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- menú en desktop -->
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto d-none d-lg-flex align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link text-primary" href="index.html">Index</a></li>
+          <li class="nav-item"><a class="nav-link text-primary" href="institucional.html">Institucional</a></li>
+          <li class="nav-item"><a class="nav-link active fw-semibold text-success" href="contacto.html">Contacto</a>
+          </li>
+          <li class="nav-item"><a class="nav-link text-primary" href="faq.html">FAQ</a></li>
         </ul>
-      </nav>
-    </header>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Formulario de contacto -->
-    <!-- placeholder muestra las letras grices de los recuerdos, en caso de sacar el nombre al boton-->
-    <main>
-      <section>
-        <h2 class="titulo-contacto">Contacto</h2>
-        <!--Action seria la direccion en donde se almacena, y post en method es por si son mas 255 carac-->
-        <form action="/mensajesdecontacto" method="POST">
-          <!--El for es para que al hacer click sobre la palabra te lleve al cuadro de texto-->
-          <label for="nombre">Nombre</label>
-          <input
-            type="text"
-            id="nombre"
-            name="nombre"
-            class="input-campo"
-            placeholder="Ingrese su Nombre"
-          /><br /><br />
-
-          <label for="correo">Correo electrónico</label>
-          <input
-            type="email"
-            id="correo"
-            name="correo"
-            class="input-campo"
-            placeholder="Ingrese su email"
-          /><br /><br />
-
-          <label for="mensaje">Mensaje</label>
-          <textarea
-            id="mensaje"
-            name="mensaje"
-            rows="8"
-            cols="50"
-            placeholder="Ingrese el mensaje"
-          ></textarea
-          ><br /><br />
-
-          <button type="submit">Enviar</button>
-        </form>
-      </section>
-
-      <!-- Información de contacto -->
-      <section class="info-contacto">
-        <h3>Información de Contacto</h3>
-          <address>
-            <p>📞 <a href="tel:+5493454362778">+54 9 345 436 2778</a></p>
-            <p>✉️ <a href="info@nuestraclinica.com">info@nuestraclinica.com</a></p>
-            <p>📍 Calle Cualquiera 1234, Concordia, Entre Ríos, Argentina</p>
-          </address>
-      </section>
-
-      <!-- Imagen de la ubicacion o link a google maps -->
-      <section class="ubicacion">
-        <h3>Nuestra Ubicación</h3>
-        <img src="#"/>
-      </section>
-    </main>
-
-    <footer>
-        <p>© 2025 IDW S.A. - Proyecto académico (primera entrega).</p>
-      <ul class="footer-redes"> 
-        <li> 
-          <a href="#" target="_blank" rel="noopener"> 
-            <img src="https://www.google.com/s2/favicons?sz=32&domain=facebook.com" alt="Facebook"> Facebook 
-          </a> 
-        </li> 
-        <li> 
-          <a href="#" target="_blank" rel="noopener"> 
-            <img src="https://www.google.com/s2/favicons?sz=32&domain=instagram.com" alt="Instagram"> Instagram 
-          </a> 
-        </li> 
-        <li> 
-          <a href="#" target="_blank" rel="noopener"> 
-            <img src="https://www.google.com/s2/favicons?sz=32&domain=linkedin.com" alt="LinkedIn"> LinkedIn 
-          </a> 
-        </li> 
+  <!-- offcanvas (mobile/tablet) -->
+  <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="menuVita" data-bs-scroll="true">
+    <div class="offcanvas-header border-bottom">
+      <h2 class="offcanvas-title fs-6 fw-bold m-0">Menú</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link text-primary" href="index.html">Index</a></li>
+        <li class="nav-item"><a class="nav-link text-primary" href="institucional.html">Institucional</a></li>
+        <li class="nav-item"><a class="nav-link active fw-semibold text-success" href="contacto.html">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link text-primary" href="faq.html">FAQ</a></li>
       </ul>
-    </footer>
-  </body>
+    </div>
+  </div>
+
+  <main role="main">
+    <!-- ======================== HERO CONTACTO ======================== -->
+    <section class="position-relative">
+      <div class="ratio ratio-21x9">
+        <img src="img/equipo-contacto.png" class="w-100 h-100 object-fit-cover"
+          alt="Equipo de atención de Clínica Vita" />
+      </div>
+
+      <!-- panel superpuesto -->
+      <div class="position-absolute bottom-0 start-0 end-0 px-3 px-md-4 pb-4 superposicion-hero">
+        <div class="bg-white bg-opacity-75 rounded-3 d-grid text-center mx-auto p-3 p-md-4 panel-hero">
+          <h2 class="fw-bolder text-primary fs-5 fs-md-3 mb-2">Contacto</h2>
+          <p class="fw-semibold text-primary mb-0">Estamos para ayudarte. Escribinos y te respondemos a la brevedad.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================== FORMULARIO E INFO ======================== -->
+    <section class="py-4 py-md-5">
+      <div class="container">
+        <!-- fila de formulario + datos (padding vertical) -->
+        <div class="row g-4 py-3 py-md-4">
+          <!-- formulario -->
+          <div class="col-12 col-lg-6">
+            <article class="card shadow-sm rounded-4 h-100">
+              <div class="card-body">
+                <h3 class="h5 fw-bold text-primary mb-3">Enviános un mensaje</h3>
+
+                <form action="/mensajesdecontacto" method="POST">
+                  <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ingresá tu nombre" />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="correo" class="form-label">Correo electrónico</label>
+                    <input type="email" id="correo" name="correo" class="form-control" placeholder="tu@email.com" />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="asunto" class="form-label">Asunto</label>
+                    <input type="text" id="asunto" name="asunto" class="form-control"
+                      placeholder="Motivo de tu consulta" />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="mensaje" class="form-label">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="6" class="form-control"
+                      placeholder="Escribí tu consulta"></textarea>
+                  </div>
+
+                  <button type="submit" class="btn btn-success w-100 fw-semibold">Enviar</button>
+                </form>
+              </div>
+            </article>
+          </div>
+
+          <!-- información de contacto (íconos + mapa centrado) -->
+          <div class="col-12 col-lg-6">
+            <article class="card shadow-sm rounded-4 h-100">
+              <div class="card-body">
+                <h3 class="h5 fw-bold text-primary mb-3">Información de contacto</h3>
+
+                <address class="mb-0">
+                  <!-- teléfono -->
+                  <p class="mb-3 d-flex align-items-start gap-2">
+                    <img src="img/telefono.png" alt="" class="icono-20 flex-shrink-0" />
+                    <span>
+                      <strong>Teléfono</strong><br />
+                      <a href="tel:+5493454362778" class="link-primary fw-semibold">+54 9 345 436 2778</a>
+                    </span>
+                  </p>
+
+                  <!-- email -->
+                  <p class="mb-3 d-flex align-items-start gap-2">
+                    <img src="img/mail.png" alt="" class="icono-20 flex-shrink-0" />
+                    <span>
+                      <strong>Email</strong><br />
+                      <a href="mailto:info@clinicavita.com" class="link-primary fw-semibold">info@clinicavita.com</a>
+                    </span>
+                  </p>
+
+                  <!-- dirección -->
+                  <p class="mb-2 d-flex align-items-start gap-2">
+                    <img src="img/ubicacion.png" alt="" class="icono-20 flex-shrink-0" />
+                    <span>
+                      <strong>Dirección</strong><br />
+                      Calle Falsa 123, Concordia, Entre Ríos
+                    </span>
+                  </p>
+
+                  <!-- mapa estático centrado -->
+                  <div class="d-flex justify-content-center mt-3">
+                    <img src="img/mapa.png" alt="Mapa de ubicación de Clínica Vita" class="img-fluid rounded-4"
+                      style="max-width: 400px;" />
+                  </div>
+                </address>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="bg-primary text-white py-3 text-center">
+    <div class="container">
+      <div class="row gy-3 align-items-center">
+        <div class="col-12">
+          <p class="m-0 fw-bold small">© 2025 IDW S.A. · Proyecto académico (segunda entrega)</p>
+        </div>
+
+        <div class="col-12">
+          <nav class="d-flex align-items-center gap-3 flex-wrap justify-content-center">
+            <a class="text-white fw-bold text-decoration-none d-inline-flex align-items-center gap-2"
+              href="https://www.facebook.com/" target="_blank" rel="noopener">
+              <img src="img/facebook.png" alt="Facebook" class="icono-20" />
+              <span>Facebook</span>
+            </a>
+            <a class="text-white fw-bold text-decoration-none d-inline-flex align-items-center gap-2"
+              href="https://www.instagram.com/" target="_blank" rel="noopener">
+              <img src="img/instagram.png" alt="Instagram" class="icono-20" />
+              <span>Instagram</span>
+            </a>
+            <a class="text-white fw-bold text-decoration-none d-inline-flex align-items-center gap-2"
+              href="https://www.linkedin.com/" target="_blank" rel="noopener">
+              <img src="img/linkedin.png" alt="LinkedIn" class="icono-20" />
+              <span>LinkedIn</span>
+            </a>
+          </nav>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- BOOTSTRAP JS -->
+  <script src="js/bootstrap.bundle.min.js" defer></script>
+</body>
+
 </html>
 
