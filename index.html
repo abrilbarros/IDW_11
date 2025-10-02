@@ -42,17 +42,15 @@
       </button>
 
       <!-- menú en desktop -->
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto d-none d-lg-flex align-items-lg-center gap-lg-3">
-          <li class="nav-item">
-            <a class="nav-link active fw-semibold text-success" href="index.html">Index</a>
-          </li>
-          <li class="nav-item"><a class="nav-link text-primary" href="institucional.html">Institucional</a>
-          </li>
-          <li class="nav-item"><a class="nav-link text-primary" href="contacto.html">Contacto</a></li>
-          <li class="nav-item"><a class="nav-link text-primary" href="faq.html">FAQ</a></li>
-        </ul>
-      </div>
+      <ul class="navbar-nav ms-auto d-none d-lg-flex align-items-lg-center gap-lg-3 m-0">
+        <li class="nav-item">
+          <a class="nav-link active fw-semibold text-success" href="index.html" aria-current="page">Index</a>
+        </li>
+        <li class="nav-item"><a class="nav-link text-primary" href="institucional.html">Institucional</a>
+        </li>
+        <li class="nav-item"><a class="nav-link text-primary" href="contacto.html">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link text-primary" href="faq.html">FAQ</a></li>
+      </ul>
     </div>
   </nav>
 
@@ -65,7 +63,7 @@
     <div class="offcanvas-body">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active fw-semibold text-success" href="index.html">Index</a>
+          <a class="nav-link active fw-semibold text-success" href="index.html" aria-current="page">Index</a>
         </li>
         <li class="nav-item"><a class="nav-link text-primary" href="institucional.html">Institucional</a></li>
         <li class="nav-item"><a class="nav-link text-primary" href="contacto.html">Contacto</a></li>
@@ -74,7 +72,7 @@
     </div>
   </div>
 
-  <main role="main">
+  <main>
     <!-- ======================== HERO / CARRUSEL ======================== -->
     <section class="position-relative">
       <div id="carruselVita" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000"
@@ -89,13 +87,13 @@
         <!-- slides -->
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="img/hero1.png" class="d-block w-100" alt="Profesionales de la salud 1" />
+            <img src="img/hero1.png" class="d-block w-100" alt="Profesionales de la salud 1" loading="eager" />
           </div>
           <div class="carousel-item">
-            <img src="img/hero2.png" class="d-block w-100" alt="Profesionales de la salud 2" />
+            <img src="img/hero2.png" class="d-block w-100" alt="Profesionales de la salud 2" loading="lazy"/>
           </div>
           <div class="carousel-item">
-            <img src="img/hero3.png" class="d-block w-100" alt="Profesionales de la salud 3" />
+            <img src="img/hero3.png" class="d-block w-100" alt="Profesionales de la salud 3" loading="lazy"/>
           </div>
         </div>
 
@@ -112,7 +110,7 @@
 
       <!-- panel de texto fijo -->
       <div class="position-absolute bottom-0 start-0 end-0 px-3 px-md-4 pb-4 superposicion-hero">
-        <div class="bg-white bg-opacity-75 rounded-3 d-grid text-center mx-auto p-3 p-md-4 panel-hero">
+        <div class="bg-white bg-opacity-75 rounded-3 text-center mx-auto p-3 p-md-4 panel-hero">
           <h2 class="fw-bolder text-primary fs-5 mb-2">Tu salud a un clic de distancia</h2>
           <p class="fw-semibold text-primary mb-3">Reservá tus turnos médicos de forma rápida y sencilla</p>
           <!-- CTA actualizado: lleva a contacto -->

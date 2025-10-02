@@ -53,28 +53,27 @@
         </button>
 
         <!-- menú en desktop -->
-        <div class="collapse navbar-collapse">
-          <ul
-            class="navbar-nav ms-auto d-none d-lg-flex align-items-lg-center gap-lg-3"
-          >
-            <li class="nav-item">
-              <a class="nav-link text-primary" href="index.html">Index</a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link active fw-semibold text-success"
-                href="institucional.html"
-                >Institucional</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-primary" href="contacto.html">Contacto</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-primary" href="faq.html">FAQ</a>
-            </li>
-          </ul>
-        </div>
+        <ul 
+          class="navbar-nav ms-auto d-none d-lg-flex align-items-lg-center gap-lg-3 m-0"
+        >
+          <li class="nav-item">
+            <a class="nav-link text-primary" href="index.html">Index</a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link active fw-semibold text-success"
+              href="institucional.html"
+              aria-current="page"
+              >Institucional</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-primary" href="contacto.html">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-primary" href="faq.html">FAQ</a>
+          </li>
+        </ul>
       </div>
     </nav>
 
@@ -102,6 +101,7 @@
             <a
               class="nav-link active fw-semibold text-success"
               href="institucional.html"
+              aria-current="page"
               >Institucional</a
             >
           </li>
@@ -115,7 +115,7 @@
       </div>
     </div>
 
-    <main role="main">
+    <main>
       <!-- ======================== HERO / CARRUSEL ======================== -->
       <section class="position-relative">
         <div
@@ -132,6 +132,7 @@
                 src="img/fachada-clinica.png"
                 class="d-block w-100"
                 alt="Fachada de la clínica"
+                loading="eager"
               />
             </div>
             <div class="carousel-item">
@@ -139,6 +140,7 @@
                 src="img/sala-x.png"
                 class="d-block w-100"
                 alt="Sala radiografías"
+                loading="lazy"
               />
             </div>
             <div class="carousel-item">
@@ -146,6 +148,7 @@
                 src="img/sala-espera.png"
                 class="d-block w-100"
                 alt="Sala de espera"
+                loading="lazy"
               />
             </div>
           </div>
@@ -176,7 +179,7 @@
           class="position-absolute bottom-0 start-0 end-0 px-3 px-md-4 pb-4 superposicion-hero"
         >
           <div
-            class="bg-white bg-opacity-75 rounded-3 d-grid text-center mx-auto p-3 p-md-4 panel-hero"
+            class="bg-white bg-opacity-75 rounded-3 text-center mx-auto p-3 p-md-4 panel-hero"
           >
             <h2 class="fw-bolder text-primary fs-5 mb-2">
               ¿Quiénes somos?
