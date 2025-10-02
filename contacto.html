@@ -94,28 +94,29 @@
             <article class="card shadow-sm rounded-4 h-100">
               <div class="card-body">
                 <h3 class="h5 fw-bold text-primary mb-3">Enviános un mensaje</h3>
-
-                <form action="/mensajesdecontacto" method="POST">
+                <form action="/mensajesdecontacto" method="POST" novalidate>
                   <div class="mb-3">
                     <label for="nombre" class="form-label">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ingresá tu nombre" />
+                    <input id="nombre" name="nombre" type="text" class="form-control" placeholder="Ingresá tu nombre"
+                      autocomplete="name" required />
                   </div>
 
                   <div class="mb-3">
                     <label for="correo" class="form-label">Correo electrónico</label>
-                    <input type="email" id="correo" name="correo" class="form-control" placeholder="tu@email.com" />
+                    <input id="correo" name="correo" type="email" class="form-control" placeholder="tu@email.com"
+                      autocomplete="email" required />
                   </div>
 
                   <div class="mb-3">
                     <label for="asunto" class="form-label">Asunto</label>
-                    <input type="text" id="asunto" name="asunto" class="form-control"
-                      placeholder="Motivo de tu consulta" />
+                    <input id="asunto" name="asunto" type="text" class="form-control"
+                      placeholder="Motivo de tu consulta" autocomplete="off" required />
                   </div>
 
                   <div class="mb-3">
                     <label for="mensaje" class="form-label">Mensaje</label>
                     <textarea id="mensaje" name="mensaje" rows="6" class="form-control"
-                      placeholder="Escribí tu consulta"></textarea>
+                      placeholder="Escribí tu consulta" autocomplete="off" required></textarea>
                   </div>
 
                   <button type="submit" class="btn btn-success w-100 fw-semibold">Enviar</button>
