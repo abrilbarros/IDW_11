@@ -1,5 +1,12 @@
 import { MEDICOS_SEED } from "./data-medicos.js";
 
+const usuario = JSON.parse(sessionStorage.getItem("usuarioLogueado"));
+
+//Solo si el usuario es Administrador ingresa
+if (!usuario || usuario.tipoUsuario !== "Administrador") {
+  window.location.href = "index.html"
+};
+
 const STORAGE_KEY = "medicos";
 
 // Inicializa LocalStorage si está vacío

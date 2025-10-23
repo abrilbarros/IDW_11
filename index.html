@@ -50,6 +50,7 @@
         </li>
         <li class="nav-item"><a class="nav-link text-primary" href="contacto.html">Contacto</a></li>
         <li class="nav-item"><a class="nav-link text-primary" href="faq.html">FAQ</a></li>
+        <li id="adminMed" class="nav-item d-none"><a class="nav-link text-primary" href="admin-medicos.html">Adminstrador</a></li>
         <li class="nav-item" id="btnInicio">
           <button class="btn btn-success ms-2" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar
             sesión</button>
@@ -75,12 +76,13 @@
         <li class="nav-item"><a class="nav-link text-primary" href="institucional.html">Institucional</a></li>
         <li class="nav-item"><a class="nav-link text-primary" href="contacto.html">Contacto</a></li>
         <li class="nav-item"><a class="nav-link text-primary" href="faq.html">FAQ</a></li>
-        <li class="nav-item d-flex justify-content-center" id="btnInicio">
+        <li id="adminMedMob" class="nav-item d-none"><a class="nav-link text-primary" href="admin-medicos.html">Administrador</a></li>
+        <li class="nav-item d-flex justify-content-center" id="btnInicioMob">
           <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#loginModal">
             Iniciar sesión
           </button>
         </li>
-        <li class="nav-item d-none" id="btnCierre">
+        <li class="nav-item d-flex justify-content-center d-none" id="btnCierreMob">
           <button class="btn btn-outline-danger ms-2">Cerrar sesión</button>
         </li>
       </ul>
@@ -254,6 +256,37 @@
     </div>
   </footer>
 
+  <!--Abre el modal para hacer el logeo-->
+  <div class="modal fade" tabindex="-1" id="loginModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Iniciar sesión</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Formulario dentro del modal -->
+        <form id="loginForm">
+          <label for="tipoUsuario" class="form-label">Tipo de usuario:</label>
+          <select id="tipoUsuario" class="form-select mb-3">
+            <option value="Administrador">Administrador</option>
+            <option value="Cliente">Cliente</option>
+          </select>
+
+          <input id="email" type="email" class="form-control mb-2" placeholder="nombre@vita.com" required>
+          <input id="pass" type="password" class="form-control mb-2" placeholder="Contraseña" required>
+
+          <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" id="btnLogin">Ingresar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
   <!-- BOOTSTRAP JS -->
   <script src="js/bootstrap.bundle.min.js" defer></script>
 
@@ -262,6 +295,8 @@
 
   <!-- JS login -->
   <script type="module" src="js/login/login.js"></script>
+
+  <script type="module" src="js/index.js"></script>
 </body>
 
 </html>
