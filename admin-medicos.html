@@ -16,6 +16,137 @@
   </head>
 
   <body>
+    <!-- ======================== NAV ======================== -->
+    <nav
+      class="navbar bg-light navbar-expand-lg sticky-top"
+      data-bs-theme="light"
+    >
+      <div class="container-fluid">
+        <!-- marca -->
+        <a
+          class="navbar-brand d-inline-flex align-items-center gap-2 m-0"
+          href="index.html"
+        >
+          <img src="img/logo.png" alt="Clínica Vita" class="logo-marca" />
+          <span class="d-none d-lg-inline fw-semibold text-primary"
+            >Clínica Vita</span
+          >
+        </a>
+
+        <!-- título centrado en mobile -->
+        <h1
+          class="position-absolute top-50 start-50 translate-middle d-lg-none fs-5 m-0 fw-bold text-primary"
+        >
+          Clínica Vita
+        </h1>
+
+        <!-- botón hamburguesa -->
+        <button
+          class="navbar-toggler ms-auto d-lg-none"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#menuVita"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- menú en desktop -->
+        <ul
+          class="navbar-nav ms-auto d-none d-lg-flex align-items-lg-center gap-lg-3 m-0"
+        >
+          <li class="nav-item">
+            <a
+              class="nav-link text-primary"
+              href="index.html"
+              aria-current="page"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-primary" href="institucional.html"
+              >Institucional</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-primary" href="contacto.html">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-primary" href="faq.html">FAQ</a>
+          </li>
+          <li class="nav-item" id="btnCierre">
+            <button class="btn active btn-outline-danger ms-2 d-none">
+              Cerrar sesión
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ======================== OFFCANVAS (mobile/tablet) ======================== -->
+
+    <div
+      class="offcanvas offcanvas-end d-lg-none"
+      tabindex="-1"
+      id="menuVita"
+      data-bs-scroll="true"
+    >
+      <div class="offcanvas-header border-bottom">
+        <h2 class="offcanvas-title fs-6 fw-bold m-0">Menú</h2>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a
+              class="nav-link active fw-semibold text-success"
+              href="index.html"
+              aria-current="page"
+              >Index</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-primary" href="institucional.html"
+              >Institucional</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-primary" href="contacto.html">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-primary" href="faq.html">FAQ</a>
+          </li>
+          <li id="adminMedMob" class="nav-item">
+            <a class="nav-link text-primary" href="admin-medicos.html"
+              >Administrador</a
+            >
+          </li>
+          <li class="nav-item d-flex justify-content-center" id="btnInicioMob">
+            <button
+              class="btn btn-success"
+              data-bs-toggle="modal"
+              data-bs-target="#loginModal"
+            >
+              Iniciar sesión
+            </button>
+          </li>
+          <li
+            class="nav-item d-flex justify-content-center d-none"
+            id="btnCierreMob"
+          >
+            <button class="btn btn-outline-danger ms-2 d-none">
+              Cerrar sesión
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ======================== FORMULARIO ======================== -->
+
     <div class="container mt-5">
       <h1 class="mb-4 text-center">Gestión de Profesionales Médicos 🩺</h1>
       <hr />
@@ -72,12 +203,13 @@
                 <label for="valorConsulta" class="form-label"
                   >Valor Consulta ($)</label
                 >
+
                 <input
                   type="number"
                   class="form-control"
                   id="valorConsulta"
-                  step="100"
                   min="1"
+                  step="1"
                   required
                 />
               </div>
@@ -140,6 +272,54 @@
         </div>
       </div>
     </div>
+
+    <!-- ======================== FOOTER ======================== -->
+
+    <footer class="bg-primary text-white py-3 text-center mt-5">
+      <div class="container">
+        <div class="row gy-3 align-items-center">
+          <div class="col-12">
+            <p class="m-0 fw-bold small">
+              © 2025 IDW S.A. · Proyecto académico (segunda entrega)
+            </p>
+          </div>
+
+          <div class="col-12">
+            <nav
+              class="d-flex align-items-center gap-3 flex-wrap justify-content-center"
+            >
+              <a
+                class="text-white fw-bold text-decoration-none d-inline-flex align-items-center gap-2"
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener"
+              >
+                <img src="img/facebook.png" alt="Facebook" class="icono-20" />
+                <span>Facebook</span>
+              </a>
+              <a
+                class="text-white fw-bold text-decoration-none d-inline-flex align-items-center gap-2"
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener"
+              >
+                <img src="img/instagram.png" alt="Instagram" class="icono-20" />
+                <span>Instagram</span>
+              </a>
+              <a
+                class="text-white fw-bold text-decoration-none d-inline-flex align-items-center gap-2"
+                href="https://www.linkedin.com/"
+                target="_blank"
+                rel="noopener"
+              >
+                <img src="img/linkedin.png" alt="LinkedIn" class="icono-20" />
+                <span>LinkedIn</span>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="js/admin-medicos.js"></script>
