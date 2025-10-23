@@ -4,7 +4,7 @@ const usuario = JSON.parse(sessionStorage.getItem("usuarioLogueado"));
 
 //Solo si el usuario es Administrador ingresa
 if (!usuario || usuario.tipoUsuario !== "Administrador") {
-  window.location.href = "index.html"
+    window.location.href = "index.html"
 };
 
 const STORAGE_KEY = "medicos";
@@ -64,7 +64,6 @@ if (isNaN(valorConsulta) || valorConsulta <= 0) {
     };
 
     if (id) {
-        // Editar médico existente
         const medicoIndex = medicos.findIndex(med => med.id == id);
         if (medicoIndex !== -1) {
             medicoData.foto = medicos[medicoIndex].foto || 'img/doctor-placeholder.jpg';
@@ -72,8 +71,7 @@ if (isNaN(valorConsulta) || valorConsulta <= 0) {
             alert("Médico modificado con éxito");
         }
     } else {
-        // Agregar nuevo médico
-        // Filtrar IDs válidos para evitar NaN
+        
         const idsExistentes = medicos
             .map(m => m.id)
             .filter(n => typeof n === "number" && !isNaN(n));
