@@ -36,7 +36,7 @@ function guardarMedico() {
     const matricula = matriculaInput.value.trim();
     const especialidad = especialidadInput.value.trim();
     const obraSocial = obraSocialInput.value;
-    const valorConsulta = parseFloat(valorConsultaInput.value) || 0;
+    const valorConsulta = parseInt(valorConsultaInput.value, 10);
     const descripcion = descripcionInput.value.trim();
 
     if (!matricula || !nombre || !apellido || !especialidad) {
@@ -44,10 +44,11 @@ function guardarMedico() {
         return;
     }
 
-    if (valorConsulta <= 0) {
-        alert("El valor de los honorarios debe ser mayor que 0.");
-        return;
-    }
+
+if (isNaN(valorConsulta) || valorConsulta <= 0) {
+    alert("El valor de los honorarios debe ser un número entero mayor que 0");
+    return;
+}
 
     let medicos = obtenerMedicos();
 
@@ -63,17 +64,23 @@ function guardarMedico() {
     };
 
     if (id) {
+        // Editar médico existente
         const medicoIndex = medicos.findIndex(med => med.id == id);
         if (medicoIndex !== -1) {
-
             medicoData.foto = medicos[medicoIndex].foto || 'img/doctor-placeholder.jpg';
             medicos[medicoIndex] = { ...medicos[medicoIndex], ...medicoData };
             alert("Médico modificado con éxito");
         }
     } else {
-        const nuevoId = medicos.length > 0 ? Math.max(...medicos.map(m => m.id)) + 1 : 1;
+        // Agregar nuevo médico
+        // Filtrar IDs válidos para evitar NaN
+        const idsExistentes = medicos
+            .map(m => m.id)
+            .filter(n => typeof n === "number" && !isNaN(n));
+
+        const nuevoId = idsExistentes.length > 0 ? Math.max(...idsExistentes) + 1 : 1;
         medicoData.id = nuevoId;
-        medicoData.foto = 'img/doctor-placeholder.jpg'; // imagen por defecto
+        medicoData.foto = 'img/doctor-placeholder.jpg';
         medicos.push(medicoData);
         alert("Médico agregado con éxito");
     }
