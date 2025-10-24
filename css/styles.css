@@ -32,6 +32,17 @@ body {
     max-width: 640px;
 }
 
+/*===== Staff ===== */
+#filtroEspecialidad {
+    min-width: 220px;
+}
+
+.card-img-top {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
 /* ===== Servicios ===== */
 .separador-angosto {
     max-width: 92%;

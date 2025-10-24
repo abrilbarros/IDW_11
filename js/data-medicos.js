@@ -1,4 +1,3 @@
-// data-medicos.js
 export const ESPECIALIDADES_SEED = [
     "Clínica Médica",
     "Pediatría",
