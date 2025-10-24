@@ -48,6 +48,12 @@ function filtrar() {
 // ==================== Botón Ver más / Ver menos ====================
 function botonVerMas(mostrar, estado) {
   let contenedor = document.getElementById('contenedorVerMas');
+
+  if (!mostrar) {
+    if (contenedor) contenedor.classList.add('d-none');
+    return;
+  }
+
   if (!contenedor) {
     grilla.insertAdjacentHTML(
       'afterend',
@@ -55,13 +61,8 @@ function botonVerMas(mostrar, estado) {
     );
     contenedor = document.getElementById('contenedorVerMas');
   }
+  contenedor.classList.remove('d-none');
 
-  if (!mostrar) {
-    contenedor.style.display = 'none';
-    return;
-  }
-
-  contenedor.style.display = '';
   let boton = document.getElementById('btnVerMas');
   if (!boton) {
     contenedor.innerHTML =
