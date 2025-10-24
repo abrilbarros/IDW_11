@@ -1,157 +1,165 @@
+// ==================== Datos y configuración ====================
 import { MEDICOS_SEED, ESPECIALIDADES_SEED } from './data-medicos.js';
 
-const STORAGE_KEY = 'medicos';
-const MAX_VISIBLE = 3;
-let expanded = false; // estado "ver más / ver menos"
+const KEY = 'medicos';
+const LIMITE = 3;
+let expandido = false;
 
-// ---------- Storage helpers (compat array / {data}) ----------
-function readAll() {
-  const raw = localStorage.getItem(STORAGE_KEY);
-  if (!raw) return [];
+// ==================== Referencias HTML ====================
+const grilla = document.getElementById('staffGrid');
+const buscador = document.getElementById('busqueda');
+const filtroEspecialidad = document.getElementById('filtroEspecialidad');
+
+// ==================== localStorage ====================
+function leer() {
+  const contenidoGuardado = localStorage.getItem(KEY);
+  if (!contenidoGuardado) return [];
   try {
-    const parsed = JSON.parse(raw);
-    if (Array.isArray(parsed)) return parsed;
-    if (parsed && Array.isArray(parsed.data)) return parsed.data;
+    const contenido = JSON.parse(contenidoGuardado);
+    return Array.isArray(contenido)
+      ? contenido
+      : (contenido && Array.isArray(contenido.data) ? contenido.data : []);
+  } catch {
     return [];
-  } catch { return []; }
-}
-function writeAll(list) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(list)); // array plano
-}
-function ensureSeed() {
-  if (!readAll().length) writeAll(MEDICOS_SEED);
+  }
 }
 
-// ---------- UI refs ----------
-const grid = document.getElementById('staffGrid');
-const inputQ = document.getElementById('q');
-const selectEsp = document.getElementById('filtroEspecialidad');
+function escribir(lista) {
+  localStorage.setItem(KEY, JSON.stringify(lista));
+}
 
-// ---------- Render ----------
-function getFiltered() {
-  const q = (inputQ?.value || '').trim().toLowerCase();
-  const esp = selectEsp?.value || '';
+function inicializar() {
+  if (leer().length === 0) escribir(MEDICOS_SEED);
+}
 
-  return readAll().filter(m => {
-    const matchQ = !q ||
-      (m.apellidoNombre || '').toLowerCase().includes(q) ||
-      (m.especialidad || '').toLowerCase().includes(q);
-    const matchEsp = !esp || m.especialidad === esp;
-    return matchQ && matchEsp;
+// ==================== Búsqueda ====================
+function filtrar() {
+  const texto = (buscador?.value || '').trim().toLowerCase();
+  const esp = filtroEspecialidad?.value || '';
+  return leer().filter(medico => {
+    const nombre = (medico.apellidoNombre || '').toLowerCase();
+    const especialidad = (medico.especialidad || '').toLowerCase();
+    const coincideTexto = !texto || nombre.includes(texto) || especialidad.includes(texto);
+    const coincideEsp = !esp || medico.especialidad === esp;
+    return coincideTexto && coincideEsp;
   });
 }
 
-function render() {
-  if (!grid) return;
+// ==================== Botón Ver más / Ver menos ====================
+function botonVerMas(mostrar, estado) {
+  let contenedor = document.getElementById('contenedorVerMas');
+  if (!contenedor) {
+    grilla.insertAdjacentHTML(
+      'afterend',
+      '<div id="contenedorVerMas" class="d-grid justify-content-center mt-3"></div>'
+    );
+    contenedor = document.getElementById('contenedorVerMas');
+  }
 
-  const medicos = getFiltered();
+  if (!mostrar) {
+    contenedor.style.display = 'none';
+    return;
+  }
 
-  if (!medicos.length) {
-    grid.innerHTML = `
+  contenedor.style.display = '';
+  let boton = document.getElementById('btnVerMas');
+  if (!boton) {
+    contenedor.innerHTML =
+      '<button id="btnVerMas" class="btn btn-outline-primary border-2 rounded-pill fw-semibold px-4">Ver más</button>';
+    boton = document.getElementById('btnVerMas');
+    boton.addEventListener('click', () => {
+      expandido = !expandido;
+      actualizarListado();
+      grilla.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+  boton.textContent = estado ? 'Ver menos' : 'Ver más';
+}
+
+// ==================== Mostrar la grilla de médicos ====================
+function actualizarListado() {
+  if (!grilla) return;
+
+  const medicos = filtrar();
+  if (medicos.length === 0) {
+    grilla.innerHTML = `
       <div class="col-12">
         <div class="alert alert-info text-center mb-0">
           No encontramos profesionales con esos criterios.
         </div>
       </div>`;
-    setVerMasVisibility(false, false);
+    botonVerMas(false, false);
     return;
   }
 
-  const listToShow = expanded ? medicos : medicos.slice(0, MAX_VISIBLE);
+  const visibles = expandido ? medicos : medicos.slice(0, LIMITE);
+  grilla.innerHTML = visibles
+    .map(medico => {
+      const foto = medico.foto || 'img/doctor-placeholder.png';
+      const nombre = medico.apellidoNombre || 'Profesional';
+      const especialidad = medico.especialidad || '';
+      const matricula = medico.matricula ? ` · ${medico.matricula}` : '';
+      const bio = medico.bio
+        ? `<p class="card-text small mb-3">${medico.bio}</p>`
+        : '';
+      const honorarios = Number(medico.honorarios || 0).toLocaleString('es-AR');
+      const obras = Array.isArray(medico.obrasSociales)
+        ? medico.obrasSociales
+        : [];
+      const etiquetasObras = obras
+        .map(o => `<span class="badge bg-light text-dark border">${o}</span>`)
+        .join(' ');
 
-  grid.innerHTML = listToShow.map(m => {
-    const foto = m.foto || 'img/doctor-placeholder.png';
-    const nombre = m.apellidoNombre || 'Profesional';
-    const especialidad = m.especialidad || '';
-    const matricula = m.matricula || '';
-    const bio = m.bio || '';
-    const honorarios = Number(m.honorarios || 0).toLocaleString('es-AR');
-    const badges = (m.obrasSociales || [])
-      .map(o => `<span class="badge bg-light text-dark border">${o}</span>`)
-      .join(' ');
-
-    return `
+      return `
         <div class="col-12 col-sm-6 col-md-4">
           <article class="card h-100 shadow-sm">
-            <img class="card-img-top"
-                src="${foto}"
-                alt="${nombre}"
-                onerror="this.onerror=null; this.src='img/doctor-placeholder.png';">
+            <img class="card-img-top" src="${foto}" alt="${nombre}"
+                onerror="this.onerror=null;this.src='img/doctor-placeholder.png'">
             <div class="card-body">
               <h3 class="h6 card-title mb-1">${nombre}</h3>
-              <p class="text-body-secondary mb-2">${especialidad}${matricula ? ' · ' + matricula : ''}</p>
-              ${bio ? `<p class="card-text small mb-3">${bio}</p>` : ''}
-              ${badges ? `<div class="d-flex flex-wrap gap-1">${badges}</div>` : ''}
+              <p class="text-body-secondary mb-2">${especialidad}${matricula}</p>
+              ${bio}
+              ${etiquetasObras
+          ? `<div class="d-flex flex-wrap gap-1">${etiquetasObras}</div>`
+          : ''
+        }
             </div>
             <div class="card-footer bg-white">
               <strong>$ ${honorarios}</strong>
             </div>
           </article>
-        </div>
-      `;
-  }).join('');
+        </div>`;
+    })
+    .join('');
 
-  // Mostrar/ocultar y actualizar el botón
-  setVerMasVisibility(medicos.length > MAX_VISIBLE, expanded);
+  botonVerMas(medicos.length > LIMITE, expandido);
 }
 
-// ---------- Botón "Ver más / Ver menos" ----------
-function ensureVerMasElements() {
-  let wrap = document.getElementById('staffVerMasWrap');
-  if (!wrap) {
-    grid.insertAdjacentHTML('afterend', `
-      <div id="staffVerMasWrap" class="d-grid justify-content-center mt-3"></div>
-    `);
-    wrap = document.getElementById('staffVerMasWrap');
-  }
-
-  let btn = document.getElementById('btnVerMas');
-  if (!btn) {
-    wrap.innerHTML = `
-      <button id="btnVerMas"
-              class="btn btn-outline-primary border-2 rounded-pill fw-semibold px-4">
-        Ver más
-      </button>
-    `;
-    btn = document.getElementById('btnVerMas');
-
-    btn.addEventListener('click', () => {
-      expanded = !expanded;     // toggle
-      render();
-      grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  }
-  return { wrap, btn: document.getElementById('btnVerMas') };
-}
-
-function setVerMasVisibility(show, isExpanded) {
-  const { wrap, btn } = ensureVerMasElements();
-  wrap.style.display = show ? '' : 'none';
-  if (!show) return;
-
-  // Texto según estado
-  btn.textContent = isExpanded ? 'Ver menos' : 'Ver más';
-}
-
-// ---------- Filtros ----------
-function poblarEspecialidades() {
-  if (!selectEsp) return;
-  selectEsp.innerHTML = '<option value="">Todas las especialidades</option>';
+// ==================== Cargar especialidades en el select ====================
+function cargarEspecialidades() {
+  if (!filtroEspecialidad) return;
+  filtroEspecialidad.innerHTML =
+    '<option value="">Todas las especialidades</option>';
   ESPECIALIDADES_SEED.forEach(e => {
-    const opt = document.createElement('option');
-    opt.value = e;
-    opt.textContent = e;
-    selectEsp.appendChild(opt);
+    const opcion = document.createElement('option');
+    opcion.value = e;
+    opcion.textContent = e;
+    filtroEspecialidad.appendChild(opcion);
   });
 }
 
-// ---------- Init ----------
+// ==================== Inicialización ====================
 document.addEventListener('DOMContentLoaded', () => {
-  ensureSeed();
-  poblarEspecialidades();
-  expanded = false;
-  render();
-
-  inputQ?.addEventListener('input', () => { expanded = false; render(); });
-  selectEsp?.addEventListener('change', () => { expanded = false; render(); });
+  inicializar();
+  cargarEspecialidades();
+  expandido = false;
+  actualizarListado();
+  buscador?.addEventListener('input', () => {
+    expandido = false;
+    actualizarListado();
+  });
+  filtroEspecialidad?.addEventListener('change', () => {
+    expandido = false;
+    actualizarListado();
+  });
 });
