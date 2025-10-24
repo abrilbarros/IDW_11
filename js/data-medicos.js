@@ -40,7 +40,7 @@ export const MEDICOS_SEED = [
         telefono: "+54 11 5252-1102",
         honorarios: 30000,
         obrasSociales: ["Swiss Medical", "OSDE", "Galeno"],
-        bio: "Pediatra con foco en control del niño sano, vacunación y seguimiento del desarrollo.",
+        bio: "Pediatra con foco en control del niño, vacunación y seguimiento del desarrollo.",
         foto: "img/mateolopezfernandez.png"
     },
     {
